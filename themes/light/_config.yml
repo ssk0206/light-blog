@@ -1,6 +1,7 @@
 menu:
   Home:
   Archives: archives
+  Members: members
 
 widgets:
 - search
