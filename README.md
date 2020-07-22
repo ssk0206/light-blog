@@ -1,3 +1,18 @@
+## 新しい投稿をする手順
+##### 1. 記事作成
+```bash
+# source/_posts以下にmdファイル作成
+$ hexo new "my new post"
+```
+##### 2. 静的ファイル作成
+```bash
+$ hexo generate
+```
+
+##### 3. push後にmasterにmerge
+
+
+
 ## Quick Start
 
 ### Create a new post
@@ -31,16 +46,3 @@ $ hexo deploy
 ```
 
 More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
-
-### 新しい投稿をする手順
-##### 1. 記事作成
-```bash
-# source/_posts以下にmdファイル作成
-$ hexo new "My New Post"
-```
-##### 2. 静的ファイル作成
-```bash
-$ hexo generate
-```
-
-##### 3. push後にmasterにmerge
