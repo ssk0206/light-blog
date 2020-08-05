@@ -6,6 +6,6 @@ date: 2020-07-23 21:13:24
 |||
 |---|---|
 |![yoshino](/members/index/yoshino.png)|吉野 雅耶　新卒3年目<br>ちーむりーだー1年目を楽しんでます。<br>文学部卒。本はたまにしか読みません。|
-|![kondo](/members/index/kondo.png)||
+|![kondo](/members/index/kondo.png)|近藤 あやの<br>チョコを食べてPHPを書いています。<br>好きな関数は `compact()` <br>基本おうちにいる。|
 |![sakai](/members/index/sakai.png)|坂井 佑理<br>夏を生きるために生きている、移動する点P。<br>モノをかくのは面倒くさいから嫌いなのに、何故かかいてしまう。<br>修士卒社会人1年生。元PythonistaのPHPer1年生。|
 |![sasahira](/members/index/sasahira.jpg)|笹平 啓介　九州大学大学院一年生(インターン生)<br>Fusicのインターンとして働きはじめてから一年以上が経ちました。<br>インターン生がここまで関わっていいのかというくらいのお仕事をさせてもらって、日々充実しています！<br>今後はエンジニアとして自立するため、幅広い分野の勉強をしていきます！<br>【PHP,JS,Goを勉強中】|
