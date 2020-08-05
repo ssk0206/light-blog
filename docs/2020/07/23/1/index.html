@@ -6,10 +6,9 @@
   <title>LeetCode 142.Linked List Cycle II を解いてみる | LIGHT BLOG</title>
   <meta name="author" content="light">
   
-  <meta name="description" content="linked listとは日本語で連結リストと呼ばれ、要素同士がそれぞれリンク情報をもっており、繋がっています。
-問題https://leetcode.com/problems/linked-list-cycle-ii/
-
-日本語訳リンクされたリストが与えられた場合、サイクルが始まるノードを返します">
+  <meta name="description" content="今回は、笹平が担当です。
+LeetCodeというアルゴリズムが学べるサービスがあるので、その中の問題の一つを解いてみました。ちなみに、linked listとは日本語で連結リストと呼ばれ、要素同士がそれぞれリンク情報をもっており、繋がっています。
+問題https://leetcode.com/pro">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -79,7 +78,8 @@
     </header>
     <div class="e-content entry" itemprop="articleBody">
       
-        <p>linked listとは日本語で連結リストと呼ばれ、要素同士がそれぞれリンク情報をもっており、繋がっています。</p>
+        <p>今回は、笹平が担当です。</p>
+<p>LeetCodeというアルゴリズムが学べるサービスがあるので、その中の問題の一つを解いてみました。<br>ちなみに、linked listとは日本語で連結リストと呼ばれ、要素同士がそれぞれリンク情報をもっており、繋がっています。</p>
 <h2 id="問題"><a href="#問題" class="headerlink" title="問題"></a>問題</h2><p><a href="https://leetcode.com/problems/linked-list-cycle-ii/" target="_blank" rel="noopener">https://leetcode.com/problems/linked-list-cycle-ii/</a></p>
 <img src="/2020/07/23/1/question.png" class="">
 <h3 id="日本語訳"><a href="#日本語訳" class="headerlink" title="日本語訳"></a>日本語訳</h3><p>リンクされたリストが与えられた場合、サイクルが始まるノードを返します。サイクルがない場合はnullを返します。</p>
@@ -87,6 +87,14 @@
 <img src="/2020/07/23/1/figure1.png" class="">
 
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * type ListNode struct &#123;</span></span><br><span class="line"><span class="comment"> *     Val int</span></span><br><span class="line"><span class="comment"> *     Next *ListNode</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">detectCycle</span><span class="params">(head *ListNode)</span> *<span class="title">ListNode</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> head == <span class="literal">nil</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    slow := head</span><br><span class="line">    fast := head</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> fast.Next == <span class="literal">nil</span> || fast.Next.Next == <span class="literal">nil</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">        &#125;</span><br><span class="line">        slow = slow.Next</span><br><span class="line">        fast = fast.Next.Next</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> slow == fast &#123;</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    slow = head</span><br><span class="line">    <span class="keyword">for</span> slow != fast &#123;</span><br><span class="line">        slow = slow.Next</span><br><span class="line">        fast = fast.Next</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> slow</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>簡単にコードの説明をします。</p>
+<p>サイクルがあるかないかの判定に、リストを移動する二つの点を作ります。（ここではslow, fastという変数を用います）<br>名前の通りslowは遅く、fastは速く(slowの2倍の速度で)移動します。<br>もし、このfastがslowに追いついたらサイクルがあるということが言えます。</p>
+<img src="/2020/07/23/1/figure2.png" class="">
+<p>Aをスタート、Bをサイクルのはじまり、Cを二つの点が重なる地点としています。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">slow: x+y</span><br><span class="line">fast: x+y+z+y</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2(x+y) &#x3D; x+y+z+y # fastはslowの2倍</span><br><span class="line">2x+2y &#x3D; x+2y+z</span><br><span class="line">x&#x3D;z</span><br></pre></td></tr></table></figure>
+<p>つまり、xとzは同じ距離になることが分かります。<br>これを踏まえると、A,Cからスタートして、2つの点がぶつかるところがサイクルのスタートということになります。<br>簡単に説明しましたが、今回の記事はこれで以上です。</p>
+
       
     </div>
     <footer>
