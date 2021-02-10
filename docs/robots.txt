@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /categories/
+Disallow: /tags/
+Disallow: /css/
+Disallow: /img/
+Disallow: /js/
+Sitemap: /sitemap.xml

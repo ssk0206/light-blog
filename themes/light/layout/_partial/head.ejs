@@ -34,6 +34,7 @@
   <% } else { %>
     <meta property="og:image" content="<%= config.cover %>"/>
   <% } %>
+  <%- open_graph({image: theme.ogp_image, twitter_id: theme.twitter.username, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
 
   <link href="<%- config.root %>favicon.png" rel="icon">
   <link rel="alternate" href="<% if (theme.rss){ %><%- theme.rss %><% } else { %><%- config.root %>atom.xml<% } %>" title="<%= config.title %>" type="application/atom+xml">
