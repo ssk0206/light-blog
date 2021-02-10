@@ -37,3 +37,12 @@ facebook:
   comment_count: 5
   comment_width: 840
   comment_colorscheme: light
+
+toc:
+  maxdepth: 6
+  class: toc
+  slugify: transliteration
+  anchor:
+    position: after
+    symbol: "#"
+    style: header-anchor
