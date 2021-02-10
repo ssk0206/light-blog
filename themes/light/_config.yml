@@ -10,6 +10,8 @@ widgets:
 
 excerpt_link: Read More
 
+ogp_image: /images/logo/logo_LIGHT_256.png
+
 twitter:
   username:
   show_replies: false
