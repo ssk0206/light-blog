@@ -30,13 +30,6 @@ fancybox: true
 google_analytics: UA-173218946-1
 rss:
 
-comment_provider: facebook
-# Facebook comment
-facebook:
-  appid: 123456789012345
-  comment_count: 5
-  comment_width: 840
-  comment_colorscheme: light
 
 toc:
   maxdepth: 6
